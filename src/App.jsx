@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Notes notes={notes} />} />
           <Route path='/create-note' element={<CreateNote setNotes={setNotes} />} />
-          <Route path='/edit-note/:id' element={<EditNote />} />
+          <Route path='/edit-note/:id' element={<EditNote setNotes={setNotes}/>} />
         </Routes>
       </BrowserRouter>
     </main>
