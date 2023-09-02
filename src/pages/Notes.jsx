@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsPlusLg } from 'react-icons/bs';
 
-// Data
-import dummyNotes from '../dummy_notes';
-
 // Components
 import NoteItem from '../components/NoteItem';
 
-function Notes() {
+function Notes({ notes }) {
   return (
     <section>
       <header className='notes__header'>
@@ -18,10 +15,10 @@ function Notes() {
       </header>
       <div className='notes__container'>
         {
-          dummyNotes.map(note => <NoteItem key={note.id} note={note} />)
+          notes.map(note => <NoteItem key={note.id} note={note} />)
         }
       </div>
-      <Link className='btn add__btn'><BsPlusLg /></Link>
+      <Link to='/create-note' className='btn add__btn'><BsPlusLg /></Link>
     </section>
   );
 }
