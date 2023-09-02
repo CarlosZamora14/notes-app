@@ -16,14 +16,13 @@ function App() {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
-
   return (
     <main id='app'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Notes notes={notes} />} />
           <Route path='/create-note' element={<CreateNote setNotes={setNotes} />} />
-          <Route path='/edit-note/:id' element={<EditNote setNotes={setNotes}/>} />
+          <Route path='/edit-note/:id' element={<EditNote setNotes={setNotes} />} />
         </Routes>
       </BrowserRouter>
     </main>

@@ -28,12 +28,22 @@ function EditNote({ setNotes }) {
     }
   }
 
+  function handleDelete() {
+    if (window.confirm('Are you sure you want to delete this note?')) {
+      setNotes(prevNotes => {
+        const newNotes = prevNotes.filter(item => item.id !== note.id);
+        return newNotes;
+      });
+      navigate('/');
+    }
+  }
+
   return (
     <section>
       <header className='create-note__header'>
         <Link to='/' className='btn'><IoIosArrowBack /></Link>
         <button className='btn lg primary' onClick={handleSubmit}>Save</button>
-        <button className='btn darger'><RiDeleteBin6Line /></button>
+        <button className='btn darger' onClick={handleDelete}><RiDeleteBin6Line /></button>
       </header>
       <form className='create-note__form' onSubmit={handleSubmit}>
         <input type='text' placeholder='Title' value={title} onChange={e => setTitle(e.target.value)} />
