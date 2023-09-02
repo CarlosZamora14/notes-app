@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Pages
 import Notes from './pages/Notes';
+import CreateNote from './pages/CreateNote';
+import EditNote from './pages/EditNote';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Notes />} />
+          <Route path='/create-note' element={<CreateNote />} />
+          <Route path='/edit-note/:id' element={<EditNote />} />
         </Routes>
       </BrowserRouter>
     </main>
